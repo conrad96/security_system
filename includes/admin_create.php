@@ -16,21 +16,21 @@
 </ul>
 </div>
 <div>
-	<h3 class="well">&nbsp;&nbsp;<?php echo $rank." &nbsp;".$name;?>  Create Employer :</h3>
+	<h4 class="well"><?php echo strtoupper($rank).":  <span class='pull-right'>Create Employer</span>"; ?></h4>
 </div>
 <form action=<?php echo "admin_create.php?empid=$empid";?> method="POST" enctype="multipart/form-data">
 <table class="table">
 <tr><td>Upload Passport Photo:</td><td><input type="file" name="photo" required="required"></td></tr>
 <tr><td class="well"><label for="uname">Username:</label></td><td><input type="text" name="uname" id="uname" required="required"></td></tr>
-<tr><td class="well"><label for="fname">First Name:</label></td><td><input type="text" name="fname" id="fname" required="required"></td></tr>	
-<tr><td class="well"><label for="lname">Last Name:</label></td><td><input type="text" name="lname" id="lname" required="required"></td></tr>	
-<tr><td class="well"><label for="position">Rank:</label></td><td><input type="text" name="position" id="position" required="required"></td></tr>	
+<tr><td class="well"><label for="fname">First Name:</label></td><td><input type="text" name="fname" id="fname" required="required"></td></tr>
+<tr><td class="well"><label for="lname">Last Name:</label></td><td><input type="text" name="lname" id="lname" required="required"></td></tr>
+<tr><td class="well"><label for="position">Rank:</label></td><td><input type="text" name="position" id="position" required="required"></td></tr>
 <tr><td class="well"><label for="contact">Contact:</label></td><td><input type="text" name="contact" id="contact" required="required"></td></tr>
 <tr><td class="well"><label for="email">Email:</label></td><td><input type="email" name="email" id="email" required="required"></td></tr>
 <tr><td>&nbsp;</td><td><font color="red">*List of Registered companies</font></td></tr>
 <tr><td class="well"><label for="company">Company:</label></td><td>
 	<select name="company">
-		<?php 
+		<?php
 $list="SELECT * FROM company";
 $list_q=$db->query($list);
 while($list_f=$db->getrow($list_q)){
@@ -38,7 +38,7 @@ echo "<option value='{$list_f['company_ID']}'>{$list_f['company_name']}</option>
 }
 		?>
 	</select>
-</td></tr>	
+</td></tr>
 <tr><td class="well"><label for="pass">Password:</label></td><td><input type="password" name="pass" id="pass" required="required"></td></tr>
 <tr><td class="well"><label for="pass2">Confirm Password:</label></td><td><input type="password" name="pass2" id="pass2" required="required"></td></tr>
 
@@ -49,7 +49,7 @@ echo "<option value='{$list_f['company_ID']}'>{$list_f['company_name']}</option>
 </body>
 <?php } ?>
 </html>
-<?php 
+<?php
 if(isset($_POST['submit'])){
 //photo
 	if($_POST['pass']==$_POST['pass2']){

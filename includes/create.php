@@ -37,11 +37,12 @@ $company_f=$db->getrow($company_q);
 ?>
 <input type="hidden" value="<?php echo "{$company_f['company_ID']}"; ?>" name="company" />
 <tr><td class="well"><label for="crecord">Criminal Record:</label></td><!-- <td><input type="text" name="crecord" id="crecord" required="required"></td> -->
-<td><textarea name="crecord" placeholder="Type criminal Record ...type N/A if Employee has no criminal Record" required="required" id="crecord"></textarea></td>
+<td><textarea name="crecord" style='width:300px;height:210px;' placeholder="Type criminal Record ...type N/A if Employee has no criminal Record" required="required" id="crecord"></textarea></td>
 </tr>
 <tr><td class="well"><label for="recommendation">Recommendation:</label></td><!-- <td><input type="text" name="recommendation" id="recommendation" required="required"></td> -->
-<td><textarea name="recommendation" required="required" placeholder="Leave a comment for Recommendation to Employee..." ></textarea></td>
+<td><textarea name="recommendation" required="required"  style='width:300px;height:210px;' placeholder="Leave a comment for Recommendation to Employee..." ></textarea></td>
 </tr>
+<tr><td class='well'><label>Employement Status</label></td><td><input type='text' name='emp_status' placeholder='Type Employment Status.. Active, Resigned, Fired ' /></td></tr>
 <tr><td>&nbsp;</td><td class="well"><input type="submit" name="submit" value="Upload" class="btn btn-default"></td></tr>
 </table>
 </form>
@@ -66,7 +67,8 @@ move_uploaded_file($photo_data,"../employees/".$photo);
 	$record=$_POST['crecord'];
 	$recomend=$_POST['recommendation'];
 	$url="http://localhost/security_system/employees/".$photo;
-$create="INSERT INTO employee VALUES('','$fname','$lname','$position','$dob','$company','$record','$recomend','$url','$contact','$email') ";
+	$empStatus=$_POST['emp_status'];
+$create="INSERT INTO employee VALUES('','$fname','$lname','$position','$dob','$company','$record','$recomend','$url','$contact','$email','$empStatus') ";
 $create_q=$db->query($create);
 if($create){
 	echo "<script>alert('Employee Record Created Successfully');</script>";

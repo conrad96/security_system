@@ -24,7 +24,7 @@
 
 	<thead>
 <tr>
-<th>&nbsp;</th><th class="well">Employee:</th><th class="well">Company:</th><th class="well">Criminal Record:</th>
+<th>&nbsp;</th><th class="well">Employee:</th><th class="well">Company:</th><th class="well">Criminal Record:</th><th class="well">Employment Status:</th>
 </th>
 </tr>
 	</thead>
@@ -53,7 +53,8 @@ while($get=$db->getrow($f)) { ?>
 				'#':"<?php echo $i; ?>",
 				'employee':"<a href=<?php echo "view.php?empid={$empid}&empl={$get['empl_ID']}"; ?> ><?php echo "{$get['empl_fname']}  {$get['empl_lname']}"; ?></a>",
 				'company':"<?php echo $get['company_name']; ?>",
-				'criminal_record':"<?php echo $get['empl_criminalrecord']; 	?>"
+				'criminal_record':"<?php echo str_replace('/','',$get['empl_criminalrecord']); 	?>",
+				'status':"<?php echo $get['emp_status']; ?>"
 			});
  <?php $i++; } ?>
 </script>
@@ -67,7 +68,8 @@ $(document).ready( function(){
 				{ data:	'#' },
         { data: 'employee' },
         { data: 'company' },
-        { data: 'criminal_record' }
+        { data: 'criminal_record' },
+				{	data:	'status'	}
     						]
 		});
 } );

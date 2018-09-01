@@ -15,11 +15,24 @@
 </ul>
 </div>
 <div>
-	<h3 class="well"><img src=<?php echo "$path"; ?> width="100" height="95">&nbsp;<?php echo $rank." &nbsp;".$name;?>&nbsp;&nbsp; View Employee Record:</h3>
+<h4 class="well"><img src=<?php echo "$path"; ?> style='width:150px;height:140px;' class='img-responsive img-thumbnail'>&nbsp;<?php echo strtoupper($rank);?> &nbsp;&nbsp;&nbsp; <span class='pull-right'>View Employee Record:</span></h4>
 </div>
 <?php
 $employee=$_GET['empl'];
-$employee_str="SELECT * FROM employee INNER JOIN company ON employee.empl_company=company.company_ID WHERE employee.empl_ID='$employee' ";
+$employee_str="
+SELECT
+employee.url ,
+empl_fname,
+empl_lname,
+empl_dob,
+employee.email,
+company_name,
+empl_position,
+employee.contact,
+empl_criminalrecord,
+empl_recommendation
+FROM employee INNER JOIN company ON employee.empl_company=company.company_ID WHERE employee.empl_ID='$employee'
+";
 $employee_q=$db->query($employee_str);
 $employee_f=$db->getrow($employee_q);
 if($employee_f){

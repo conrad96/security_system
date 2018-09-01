@@ -16,17 +16,17 @@
 </ul>
 </div>
 <div>
-	<h3 class="well">&nbsp;&nbsp;<?php echo $rank." &nbsp;".$name;?>  Register Company :</h3>
+	<h4 class="well"><?php echo strtoupper($rank).":  <span class='pull-right'>Register Company</span>"; ?></h4>
 </div>
 <form action=<?php echo "admin_company.php?empid=$empid";?> method="POST" enctype="multipart/form-data" >
 <table class="table">
 <tr><td>Upload Company Logo:</td><td><input type="file" name="photo" ></td></tr>
 <tr><td class="well"><label for="uname">Company:</label></td><td><input type="text" name="company" id="uname" required="required"></td></tr>
-<tr><td class="well"><label for="fname">Location:</label></td><td><input type="text" name="location" id="fname" required="required"></td></tr>	
+<tr><td class="well"><label for="fname">Location:</label></td><td><input type="text" name="location" id="fname" required="required"></td></tr>
 <tr><td class="well"><label for="lname">Description:</label></td><td><!-- <input type="text" name="description" id="lname" required="required"> -->
 	<textarea name="description" placeholder="Type Company Description Here.." required="required"></textarea>
-</td></tr>	
-<tr><td class="well"><label for="position">No.of Staff:</label></td><td><input type="text" name="staff" id="position" required="required"></td></tr>	
+</td></tr>
+<tr><td class="well"><label for="position">No.of Staff:</label></td><td><input type="text" name="staff" id="position" required="required"></td></tr>
 <tr><td class="well"><label for="contact">Customer Care TelNo:</label></td><td><input type="text" name="contact" id="contact" required="required"></td></tr>
 <tr><td class="well"><label for="email">Email:</label></td><td><input type="email" name="email" id="email" required="required"></td></tr>
 <tr><td>&nbsp;</td><td class="well"><input type="submit" name="submit" value="Upload" class="btn btn-default"></td></tr>
@@ -36,10 +36,10 @@
 </body>
 <?php } ?>
 </html>
-<?php 
+<?php
 if(isset($_POST['submit'])){
 //photo
-	
+
 $photo_type=$_FILES['photo']['type'];
 //if($photo_type=='image/jpeg'||$photo_type=='image/png'||$photo_type=='image/jpg'||$photo_type=='image/gif'){
 $photo=$_FILES['photo']['name'];

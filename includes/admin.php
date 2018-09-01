@@ -16,7 +16,7 @@
 </ul>
 </div>
 <div>
-	<h3 class="well">Welcome  &nbsp;&nbsp;&nbsp; <?php echo $rank." &nbsp;".$name; ?></h3>
+	<h4 class="well">Welcome  &nbsp;&nbsp;&nbsp; <?php echo strtoupper($rank).":  <span class='pull-right'>".$name."</span>"; ?></h4>
 </div>
 <?php
 $companies="SELECT * FROM company";
@@ -42,7 +42,7 @@ while($company_f=$db->getrow($companies_q))
 	<table class="table">
 		<tr><td>&nbsp;</td><td class="well">Employers:</td><td class="well">Companies:</td><td class="well">Rank:</td></tr>
 	<?php
-	$str="SELECT * FROM employer";
+	$str="SELECT * FROM employer WHERE rank!='admin' ";
 	$str_q=$db->query($str);
 	while($str_f=$db->getrow($str_q)){
 		$str2="SELECT * FROM company WHERE company_ID={$str_f['company_ID']}";
