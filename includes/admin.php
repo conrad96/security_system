@@ -9,7 +9,7 @@
 	$rank=$search_f['rank'];  ?>
 	<div>
 <ul class="nav nav-tabs">
-	<li class="active"><a href=<?php echo "admin.php?empid=$empid";?>>Dashboard</a></li>
+	<li class="active"><a href=<?php echo "admin.php?empid=$empid";?>>Member Co's </a></li>
 	<li><a href=<?php echo "admin_create.php?empid=$empid";?>>Register Employer</a></li>
 	<li><a href=<?php echo "admin_company.php?empid=$empid";?>>Register Company</a></li>
 	<li><a href="../index.php">Logout</a></li>

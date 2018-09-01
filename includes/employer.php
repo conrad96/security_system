@@ -2,12 +2,7 @@
 <?php if(isset($_GET['empid'])){?>
 <?php $empid=$_GET['empid'];?>
 <div>
-<ul class="nav nav-tabs">
-	<li class="active"><a href=<?php echo "employer.php?empid=$empid";?>>Dashboard</a></li>
-	<li><a href=<?php echo "scan.php?empid=$empid";?>>Search</a></li>
-	<li><a href=<?php echo "create.php?empid=$empid";?>>Register Employee</a></li>
-	<li><a href="../index.php">Logout</a></li>
-</ul>
+<?php include("emp_navigation.php"); ?>
 </div>
 <?php
 $str="SELECT * FROM employer WHERE emp_ID='$empid'";

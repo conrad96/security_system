@@ -8,12 +8,7 @@
 	$path=$search_f['url'];
 	$rank=$search_f['rank'];  ?>
 	<div>
-<ul class="nav nav-tabs">
-	<li><a href=<?php echo "employer.php?empid=$empid";?>>Dashboard</a></li>
-	<li><a href=<?php echo "scan.php?empid=$empid";?>>Search</a></li>
-	<li class="active"><a href=<?php echo "create.php?empid=$empid";?>>Register Employee</a></li>
-	<li><a href="../index.php">Logout</a></li>
-</ul>
+<?php include("emp_navigation.php"); ?>
 </div>
 <div>
 	<h3 class="well">&nbsp;<?php echo $rank." &nbsp;".$name;?> Create Employee :</h3>

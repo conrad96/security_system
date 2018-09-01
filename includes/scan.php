@@ -8,12 +8,7 @@
 	$path=$search_f['url'];
 	$rank=$search_f['rank'];  ?>
 	<div>
-<ul class="nav nav-tabs">
-	<li><a href=<?php echo "employer.php?empid=$empid";?>>Dashboard</a></li>
-	<li class="active"><a href=<?php echo "scan.php?empid=$empid";?>>Search</a></li>
-	<li><a href=<?php echo "create.php?empid=$empid";?>>Register Employee</a></li>
-	<li><a href="../index.php">Logout</a></li>
-</ul>
+<?php include("emp_navigation.php"); ?>
 </div>
 <div>
 	<h3 class="well"><img src=<?php echo "$path"; ?> style='width:150px;height:140px;' class='img-responsive img-thumbnail'>&nbsp;<?php echo strtoupper($rank);?> &nbsp;&nbsp;&nbsp; <span class='pull-right'>Search Employee Record:</span></h3>
@@ -53,7 +48,7 @@ while($get=$db->getrow($f)) { ?>
 				'#':"<?php echo $i; ?>",
 				'employee':"<a href=<?php echo "view.php?empid={$empid}&empl={$get['empl_ID']}"; ?> ><?php echo "{$get['empl_fname']}  {$get['empl_lname']}"; ?></a>",
 				'company':"<?php echo $get['company_name']; ?>",
-				'criminal_record':"<?php echo str_replace('/','',$get['empl_criminalrecord']); 	?>",
+				'criminal_record':"<?php echo $get['empl_criminalrecord']; 	?>",
 				'status':"<?php echo $get['emp_status']; ?>"
 			});
  <?php $i++; } ?>

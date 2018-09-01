@@ -8,11 +8,7 @@
 	$path=$search_f['url'];
 	$rank=$search_f['rank'];  ?>
 	<div>
-<ul class="nav nav-tabs">
-	<li class="active"><a href=<?php echo "scan.php?empid=$empid";?>>Back</a></li>
-	<li><a href=<?php echo "employer.php?empid=$empid";?>>Exit</a></li>
-	<li><a href="../index.php">Logout</a></li>
-</ul>
+<?php include("emp_navigation.php"); ?>
 </div>
 <div>
 <h4 class="well"><img src=<?php echo "$path"; ?> style='width:150px;height:140px;' class='img-responsive img-thumbnail'>&nbsp;<?php echo strtoupper($rank);?> &nbsp;&nbsp;&nbsp; <span class='pull-right'>View Employee Record:</span></h4>

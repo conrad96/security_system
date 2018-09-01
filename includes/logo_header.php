@@ -4,7 +4,7 @@
 <head>
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="../css/main.css">
-<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" >
+<link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.min.css" >
 
 	<title>Ndugari</title>
 </head>
@@ -18,4 +18,9 @@
 </table>
 </div>
 <script src="../js/jquery-3.2.1.min.js"></script>
-<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="../js/jquery.dataTables.min.js"></script>
+<style>
+ul li a{
+	text-transform: capitalize;
+}
+</style>

@@ -13,10 +13,12 @@
 	<h1 class="well">About System</h1>
 </div>
 <h4 class="well">Objective:</h4><p>
-<ul>
+
+<ul style="font-size:18px;">
 <li>To provide Background Check of Applicants</li>
 <li>To Connect to All Security Companies to Share Employee History</li>
 <li>Register new Companies to the System to expand Information Base.</li>
 </ul>
+
 </body>
 </html>
