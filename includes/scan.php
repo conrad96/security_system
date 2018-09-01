@@ -24,18 +24,6 @@
 </tr>
 	</thead>
 
-<?php
-$employees=$db->getEmployees();
-$q=$db->query("SELECT * FROM employee");
-if(!empty($db->getrow($q))){
-	while($employees=$db->getrow($q))
-	{
-		?>
-<?php
-//gett data values
-	}
-}
- ?>
 </table>
 
 <script type="text/javascript">
