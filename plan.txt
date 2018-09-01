@@ -1,0 +1,18 @@
+-global system
+-Logs into system
+-employer inputs employees details in database
+-updates employes record(edit record,Hide record statement,add record of an employee)
+-other security companies can search the employees record[Drop down list of employees with their photos]
+
+->the employee belongs in company database(needs Intergration)
+->employee is created by the employer(ranks CEO,Human Resource officer) can create employees
+
+--use role key--
+1.employee
+2.human resource officer
+3.ceo/director/executive director
+4.admin
+
+--put scrolllbar on crime record and recommendation fields
+
+<?php echo "<a href=view.php?empid=$empid&empl=".$get['empl_ID'].">".$get['empl_fname']." ' ' ".$get['empl_lname']."</a>"; ?>
