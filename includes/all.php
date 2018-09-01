@@ -32,7 +32,7 @@ if($emp_f){
   				'#':"<?php echo $i; ?>",
   				'employee':"<a href=<?php echo "view.php?empid={$empid}&empl={$get['empl_ID']}"; ?> ><?php echo "{$get['empl_fname']}  {$get['empl_lname']}"; ?></a>",
   				'company':"<?php echo $get['company_name']; ?>",
-  				'criminal_record':"<?php echo str_replace('/','',$get['empl_criminalrecord']); 	?>",
+  				'criminal_record':"<?php echo $get['empl_criminalrecord']; 	?>",
   				'status':"<?php echo $get['emp_status']; ?>"
   			});
    <?php $i++; } ?>
