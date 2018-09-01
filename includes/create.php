@@ -19,10 +19,15 @@
 <tr><td>Upload Passport Photo:</td><td><input type="file" name="photo" required="required"></td></tr>
 <tr><td class="well"><label for="fname">First Name:</label></td><td><input type="text" name="fname" id="fname" required="required"></td></tr>
 <tr><td class="well"><label for="lname">Last Name:</label></td><td><input type="text" name="lname" id="lname" required="required"></td></tr>
-<tr><td class="well"><label for="position">Position:</label></td><td><input type="text" name="position" id="position" required="required"></td></tr>
+<tr><td class="well"><label for="father">Father's Names:</label></td><td><input type="text" name="father" id="father" ></td></tr>
+<tr><td class="well"><label for="father-dob">Father's D.O.B:</label></td><td><input type="date" name="father_dob" id="father-dob"></td></tr>
+<tr><td class="well"><label for="father-addr">Father's Address:</label></td><td><input type="text" name="father_addr" id="father-addr"></td></tr>
+<tr><td class="well"><label for="mother">Mother's Names:</label></td><td><input type="text" name="mother" id="mother" ></td></tr>
+<tr><td class="well"><label for="former">Former Employer:</label></td><td><input type="text" name="former" id="former" ></td></tr>
+<tr><td class="well"><label for="position">Current Position:</label></td><td><input type="text" name="position" id="position" required="required"></td></tr>
 <tr><td class="well"><label for="dob">Date Of Birth:</label></td><td><input type="date" name="dob" id="dob" required="required"></td></tr>
 <tr><td class="well"><label for="contact">Contact:</label></td><td><input type="text" name="contact" id="contact" required="required"></td></tr>
-<tr><td class="well"><label for="email">Email:</label></td><td><input type="email" name="email" id="email" required="required"></td></tr>
+<tr><td class="well"><label for="email">Email:</label></td><td><input type="email" name="email" id="email" ></td></tr>
 <!-- <tr><td class="well"><label for="company">Company:</label></td><td><input type="text" name="company" id="company" required="required"></td></tr>
  -->
 <?php
@@ -63,7 +68,12 @@ move_uploaded_file($photo_data,"../employees/".$photo);
 	$recomend=$_POST['recommendation'];
 	$url="http://localhost/security_system/employees/".$photo;
 	$empStatus=$_POST['emp_status'];
-$create="INSERT INTO employee VALUES('','$fname','$lname','$position','$dob','$company','$record','$recomend','$url','$contact','$email','$empStatus') ";
+	$father_dob=$_POST['father_dob'];
+	$father_addr=$_POST['father_addr'];
+	$father_names=$_POST['father'];
+	$mother_names=$_POST['mother'];
+	$former=$_POST['former'];
+$create="INSERT INTO employee VALUES('','$fname','$lname','$position','$dob','$company','$record','$recomend','$url','$contact','$email','$empStatus','$father_names','$mother_names','$former','$father_dob','$father_addr') ";
 $create_q=$db->query($create);
 if($create){
 	echo "<script>alert('Employee Record Created Successfully');</script>";

@@ -26,7 +26,12 @@ company_name,
 empl_position,
 employee.contact,
 empl_criminalrecord,
-empl_recommendation
+empl_recommendation,
+empl_father_names,
+empl_mother_names,
+empl_father_dob,
+empl_father_addr,
+empl_former_employer
 FROM employee INNER JOIN company ON employee.empl_company=company.company_ID WHERE employee.empl_ID='$employee'
 ";
 $employee_q=$db->query($employee_str);
@@ -50,8 +55,13 @@ $current=date("Y"); $age=$current-$dob1[0]; echo $age." yrs";?></td></tr>
 <tr><td>Email:</td><td><?php echo $employee_f['email'];?></td></tr>
 <tr><td class="well"><b>Company:</b></td><td><?php echo $employee_f['company_name'];?></td></tr>
 <tr><td class="well"><b>Position:</b></td><td><?php echo $employee_f['empl_position'];?></td></tr>
-<tr><td class="well"><b>Status:</b></td><td><?php echo $employee_f['empl_criminalrecord'];?></td></tr>
-<tr><td class="well"><b>Purpose for Leaving:</b></td><td><?php echo $employee_f['empl_recommendation'];?></td></tr>
+<tr><td class="well"><b>Criminal Record:</b></td><td><?php echo $employee_f['empl_criminalrecord'];?></td></tr>
+<tr><td class="well"><b>Recommendation:</b></td><td><?php echo $employee_f['empl_recommendation'];?></td></tr>
+<tr><td class="well"><b>Father's Names:</b></td><td><?php echo $employee_f['empl_father_names']; ?></td></tr>
+<tr><td class="well"><b>Mother's Names:</b></td><td><?php echo $employee_f['empl_mother_names']; ?></td></tr>
+<tr><td class="well"><b>Father's D.O.B:</b></td><td><?php echo $employee_f['empl_father_dob']; ?></td></tr>
+<tr><td class="well"><b>Father's Address:</b></td><td><?php echo $employee_f['empl_father_addr']; ?></td></tr>
+<tr><td class="well"><b>Former Employer:</b></td><td><?php echo $employee_f['empl_former_employer']; ?></td></tr>
 </table>
 </body>
 <?php }else{echo "<script>alert('Employee Doesnot Exist in Database');</script>";} } ?>

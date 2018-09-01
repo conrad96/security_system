@@ -10,7 +10,7 @@
  <table>
 	<tr><td><img src="logos/security.jpg" style='width:500px;height:150px;'></td>
 	<td>&nbsp;</td>
-	<td><h1>PRIVATE SECURITY ORGANIZATIONS AND CRIME DETECTION SYSTEM</h1></td>
+	<td><h1>PRIVATE SECURITY ORGANIZATIONS AND CRIME TRACKING SYSTEM</h1></td>
 	</tr>
 </table>
 </div>
