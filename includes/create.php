@@ -3,17 +3,15 @@
 	$empid=$_GET['empid'];
 	$search="SELECT * FROM employer WHERE emp_ID='$empid' ";
 	$search_q=$db->query($search);
-	$search_f=$db->getrow($search_q);
-	$name=$search_f['emp_uname'];
-	$path=$search_f['url'];
-	$rank=$search_f['rank'];  ?>
+	$emp_f=$db->getrow($search_q);
+	$name=$emp_f['emp_uname'];
+	$path=$emp_f['url'];
+	$rank=$emp_f['rank'];  ?>
 	<div>
 <?php include("emp_navigation.php"); ?>
 </div>
-<div>
-	<h3 class="well">&nbsp;<?php echo $rank." &nbsp;".$name;?> Create Employee :</h3>
-</div>
-
+<?php include("emp_div_row.php"); ?>
+<center><h4 class="well">Register Employee</h4></center>
 <form action=<?php echo "create.php?empid=$empid"; ?> method="POST" enctype="multipart/form-data">
 <table class="table">
 <tr><td>Upload Passport Photo:</td><td><input type="file" name="photo" required="required"></td></tr>

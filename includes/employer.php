@@ -11,9 +11,7 @@ $emp_f=$db->getrow($emp);
 if($emp_f){
 	$path=$emp_f['url'];
  ?>
-<div>
-<h4 class="well"><img src=<?php echo "$path"; ?> width='100' height='95' alt='Pic' /> &nbsp; &nbsp; &nbsp;<?php echo $emp_f['emp_uname']?></h4>
-</div>
+<?php include("emp_div_row.php"); ?>
 <!-- section displays the employers details-->
 <?php
 $company="SELECT * FROM company WHERE company_ID={$emp_f['company_ID']}";

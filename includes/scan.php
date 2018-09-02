@@ -3,20 +3,17 @@
 	$empid=$_GET['empid'];
 	$search="SELECT * FROM employer WHERE emp_ID='$empid' ";
 	$search_q=$db->query($search);
-	$search_f=$db->getrow($search_q);
-	$name=$search_f['emp_uname'];
-	$path=$search_f['url'];
-	$rank=$search_f['rank'];  ?>
+	$emp_f=$db->getrow($search_q);
+	$name=$emp_f['emp_uname'];
+	$path=$emp_f['url'];
+	$rank=$emp_f['rank'];  ?>
 	<div>
 <?php include("emp_navigation.php"); ?>
 </div>
-<div>
-	<h3 class="well"><img src=<?php echo "$path"; ?> style='width:150px;height:140px;' class='img-responsive img-thumbnail'>&nbsp;<?php echo strtoupper($rank);?> &nbsp;&nbsp;&nbsp; <span class='pull-right'>Search Employee Record:</span></h3>
-</div>
-
+<?php include("emp_div_row.php"); ?>
+<center><h4 class="well">Search Employee Record</h4></center>
 <div id="search_results">
 <table id="emps" class="table">
-
 	<thead>
 <tr>
 <th>&nbsp;</th><th class="well">Employee:</th><th class="well">Company:</th><th class="well">Criminal Record:</th><th class="well">Employment Status:</th>

@@ -11,9 +11,9 @@ $emp_f=$db->getrow($emp);
 if($emp_f){
 	$path=$emp_f['url'];
  ?>
-<div>
-<h4 class="well"><img src=<?php echo "$path"; ?> width='100' height='95' alt='Pic' /> &nbsp; &nbsp; &nbsp;<?php echo $emp_f['emp_uname']?></h4>
-</div>
+ <div>
+<?php include("emp_div_row.php"); ?>
+<center><h4 class="well">Employee Database Records:</h4></center>
 <table id="emps_all" class="table">
   <thead>
 <tr>
@@ -30,7 +30,7 @@ if($emp_f){
   while($get=$db->getrow($f)) { ?>
   		stack_stuff.push({
   				'#':"<?php echo $i; ?>",
-  				'employee':"<a href=<?php echo "view.php?empid={$empid}&empl={$get['empl_ID']}"; ?> ><?php echo "{$get['empl_fname']}  {$get['empl_lname']}"; ?></a>",
+  				'employee':"<a href=<?php echo "view_all.php?empid={$empid}&empl={$get['empl_ID']}"; ?> ><?php echo "{$get['empl_fname']}  {$get['empl_lname']}"; ?></a>",
   				'company':"<?php echo $get['company_name']; ?>",
   				'criminal_record':"<?php echo $get['empl_criminalrecord']; 	?>",
   				'status':"<?php echo $get['emp_status']; ?>"
